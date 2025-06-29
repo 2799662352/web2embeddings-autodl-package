@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "chroma_minimal_server": {
+      "command": "python",
+      "args": [
+        "/root/autodl-tmp/mcp_server/chroma_mcp_server_minimal.py",
+        "--chromadb-path",
+        "/root/autodl-tmp/artifacts/vector_stores/chroma_db",
+        "--collection-name",
+        "danbooru_training_data_jina-embeddings-v3",
+        "--model-name",
+        "jinaai/jina-embeddings-v3",
+        "--device",
+        "auto"
+      ],
+      "env": {
+        "PYTHONPATH": "/root/autodl-tmp:$PYTHONPATH"
+      }
+    }
+  }
+}
