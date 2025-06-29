@@ -1,0 +1,7 @@
+{
+  "name": "web2embeddings_autodl_package",
+  "version": "1.0.0",
+  "description": "An AutoDL package for vectorizing text data using sentence-transformers.",
+  "author": "AI Assistant",
+  "entry_point": "main.py"
+} 

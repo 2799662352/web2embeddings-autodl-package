@@ -1,0 +1,31 @@
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+html5lib>=1.1
+lxml>=4.9.0
+markdownify>=0.11.6
+PyMuPDF>=1.23.0
+
+# ML dependencies  
+sentence-transformers>=3.3.1
+transformers>=4.45.0
+torch>=2.1.0
+
+# Vector database
+chromadb>=0.5.23
+
+# Visualization and analysis dependencies
+rich>=13.0.0
+psutil>=5.9.0
+GPUtil>=1.4.0
+numpy
+plotly
+scikit-learn
+umap-learn
+
+# Required for jina-embeddings-v3 model
+einops>=0.8.0
+
+# Optional GPU acceleration (Windows installation may require MSVC Build Tools)
+# Uncomment below line if you have proper build environment set up:
+# flash-attn>=2.6.0 --no-build-isolation 
