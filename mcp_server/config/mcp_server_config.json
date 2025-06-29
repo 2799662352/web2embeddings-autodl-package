@@ -1,0 +1,90 @@
+{
+  "server_name": "Minimal ChromaDB Query Server",
+  "version": "1.0.0",
+  "description": "A FastMCP server for ChromaDB vector queries with artist analysis workflow",
+  
+  "default_settings": {
+    "chromadb_path": "/root/autodl-tmp/artifacts/vector_stores/chroma_db",
+    "collection_name": "danbooru_training_data_jina-embeddings-v3",
+    "memory_collection_name": "user_memories",
+    "model_name": "jinaai/jina-embeddings-v3",
+    "device": "auto"
+  },
+  
+  "environment_configs": {
+    "autodl": {
+      "description": "AutoDL platform configuration",
+      "chromadb_path": "/root/autodl-tmp/artifacts/vector_stores/chroma_db",
+      "collection_name": "danbooru_training_data_jina-embeddings-v3",
+      "model_name": "jinaai/jina-embeddings-v3",
+      "device": "auto"
+    },
+    "local_dev": {
+      "description": "Local development configuration",
+      "chromadb_path": "./artifacts/vector_stores/chroma_db",
+      "collection_name": "danbooru_training_data_jina-embeddings-v3",
+      "model_name": "jinaai/jina-embeddings-v3",
+      "device": "cpu"
+    },
+    "production": {
+      "description": "Production server configuration",
+      "chromadb_path": "/opt/vector_stores/chroma_db",
+      "collection_name": "production_embeddings",
+      "model_name": "jinaai/jina-embeddings-v3",
+      "device": "cuda"
+    }
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "handlers": [
+      {
+        "type": "stream",
+        "stream": "stdout"
+      },
+      {
+        "type": "file",
+        "filename": "/root/autodl-tmp/logs/mcp_server.log",
+        "max_bytes": 10485760,
+        "backup_count": 5
+      }
+    ]
+  },
+  
+  "query_settings": {
+    "default_n_results": 5,
+    "max_n_results": 50,
+    "similarity_threshold": 0.7,
+    "timeout_seconds": 30
+  },
+  
+  "artist_analysis": {
+    "enabled": true,
+    "artist_keywords": [
+      "artist:", "作者:", "画师:", "绘师:"
+    ],
+    "analysis_depth": "detailed",
+    "recommendation_count": 4,
+    "similarity_weights": {
+      "style": 0.4,
+      "tags": 0.3,
+      "quality": 0.2,
+      "popularity": 0.1
+    }
+  },
+  
+  "memory_settings": {
+    "auto_cleanup": true,
+    "max_memories_per_user": 1000,
+    "cleanup_interval_days": 30,
+    "memory_retention_days": 90
+  },
+  
+  "performance": {
+    "model_cache_size": "2GB",
+    "query_batch_size": 32,
+    "embedding_cache_ttl": 3600,
+    "connection_pool_size": 10
+  }
+}

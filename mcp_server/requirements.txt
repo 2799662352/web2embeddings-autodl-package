@@ -1,0 +1,33 @@
+# ChromaDB MCP Server Dependencies
+# 这些是运行 MCP 服务器所需的额外依赖包
+
+# MCP 框架
+fastmcp-server>=0.1.0
+
+# 向量数据库
+chromadb>=0.4.0
+
+# 嵌入模型
+sentence-transformers>=2.2.0
+
+# PyTorch (如果主项目未安装)
+torch>=2.0.0
+
+# 可选：GPU 支持
+# torch-audio  # 如需音频处理
+# torch-vision # 如需图像处理
+
+# 日志和工具
+loguru>=0.7.0  # 更好的日志输出
+
+# JSON 处理
+orjson>=3.8.0  # 高性能 JSON 处理
+
+# 类型检查
+typing-extensions>=4.0.0
+
+# UUID 生成
+uuid>=1.30
+
+# 时间处理
+python-dateutil>=2.8.0
