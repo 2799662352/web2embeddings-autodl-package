@@ -1,0 +1,10 @@
+{
+  "input": "/root/autodl-tmp/data/danbooru_training_data.jsonl",
+  "db": "/root/autodl-tmp/artifacts/vector_stores/chroma_db_cpu",
+  "model": "jinaai/jina-embeddings-v3",
+  "task": "retrieval.passage",
+  "truncate_dim": 256,
+  "max_length": 2048,
+  "batch_size": 8,
+  "device": "cpu"
+}
